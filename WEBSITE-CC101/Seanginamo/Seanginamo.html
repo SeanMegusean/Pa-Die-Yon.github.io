@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/acd026859a.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="header__wrapper">
+      <header></header>
+      <div class="cols__container">
+        <div class="left__col">
+          <div class="img__container">
+            <img src="img/user.jpg" alt="Sean Fernandez" style="width:200px;height:200px;"> 
+            <span></span>
+          </div>
+          <h2>Sean Fernandez</h2>
+          <p id="p1">Future Software Engineer</p>
+          <p id="p1">fernandez.sean.marino@gmail.com</p>
+
+          <ul class="about">
+            <li><span>BS IT</span>Program</li>
+            <li><span>1st Year</span>Year Level</li>
+            <li><span>SBIT - 1L</span>Section</li>
+          </ul>
+          
+          <div class="content">
+            <p>
+              "It's not how much time you have, it's how you use it"
+            </p>
+
+            <ul>
+              <li><i class="fab fa-twitter"></i></li>
+              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-dribbble"></i>
+            </ul>
+          </div>
+        <div class="music">
+          <div class="container">
+              <div class="spotify-player">
+                <img src="img/thumbnail.jfif" class="song-img">
+                <h1>Keep Driving</h1>
+                <p>Harry Styles</p>
+
+                <audio id="song" loop> 
+                    
+                    <source src="song/Harry Styles - Keep Driving (Audio).mp3" type="audio/mpeg">
+                </audio>
+                <input type="range" value="0" id="progress">
+
+                <div class="controls">
+                    <div><i class="fa-solid fa-backward"></i></div>
+                    <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                    <div><i class="fa-solid fa-forward"></i></div>
+                </div>
+                </div>
+          </div>
+          <script>
+            let progress = document.getElementById("progress");
+            let song = document.getElementById("song");
+            let ctrlIcon = document.getElementById("ctrlIcon");
+
+            song.onloadedmetadata = function(){
+              progress.max = song.duration;
+              progress.value = song.currentTime;
+            }
+            function playPause(){
+              if(ctrlIcon.classList.contains("fa-pause")){
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+               }
+              else{
+                song.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+              }
+            }
+
+            if(song.play()){
+              setInterval(()=>{
+                progress.value=song.currentTime;
+              },500);
+            }
+
+            progress.onchange = function(){
+              song.play();
+              song.currentTime = progress.value;
+              ctrlIcon.classList.add("fa-pause");
+              ctrlIcon.classList.remove("fa-play");
+            }
+
+          </script>
+          </div>
+        </div>
+        <div class="right__col">
+          <nav class="navbar">
+            <ul>
+              <li><a href="#photos">photos</a></li>
+              <li><a href="#about">about</a></li>
+            </ul>
+          </nav>
+
+          <div id="photos">
+            <img src="img/img1.jfif" alt="Photo" />
+            <img src="img/ito.jfif" alt="Photo" />
+            <img src="img/ito rin.jfif" alt="Photo" />
+            <img src="img/at ito.jfif" alt="Photo" />
+            <img src="img/akotoh.jpg" alt="Photo" />
+            <img src="img/ako rin toh.jpg" alt="Photo" />
+          </div>
+
+          <div id="about">
+            <h1>About Me</h1>
+            <p>
+              Hey there! I'm Sean M. Fernandez, 
+              an 18-year-old boy currently pursuing 
+              the Bachelor of Science in Information 
+              Technology program at Quezon City University 
+              (QCU). I call North Fairview, Phase 8, Quezon
+              City, home, and I celebrate my birthday on 
+              June 2, 2005. I'm all about tech and love 
+              exploring its limitless potential. When I'm 
+              not diving into my IT studies, you'll likely 
+              find me glued to movies, savoring various genres, 
+              or getting lost in the pages of intriguing books. 
+              Gaming also piques my interest as it combines fun 
+              and mental challenges. Passionate about tech's 
+              evolving landscape, I'm always eager to learn 
+              more and discuss anything from technology trends
+              to favorite film picks or book recommendations. 
+              Feel free to reach out if you want to chat 
+              about these or anything else!
+            </p>
+
+            <h1>Personal Information</h1>
+            <ul class="aligned-list">
+              <li id="about">Name: Sean M. Fernandez</li>
+              <li id="about">Age: 18</li>
+              <li id="about">Birthday: June 2, 2005</li>
+            </ul>
+            
+            <h1>Skills</h1>
+            <ul class="aligned-list">
+              <li id="about">● Computer proficiency</li>
+              <li id="about">● Problem-solving: identifying problems, analyzing information, developing solutions, and making decisions.</li>
+              <li id="about">● Emotional intelligence: managing and understanding one's own emotions and those of others.</li>
+              <li id="about">● Adaptability: adjusting to changes in the work environment, learning new skills, and being flexible.</li>
+              <li id="about">● Creativity: thinking outside the box, generating new ideas, and finding innovative solutions to problems.</li>
+              <li id="about">● Time management: prioritizing tasks, meeting deadlines, and organizing work efficiently.</li>
+              <li id="about">● Attention to detail: focusing on accuracy, precision, and quality in work.</li>
+              <li id="about">● Teamwork: working collaboratively with others, supporting team goals, building relationships, and providing
+                constructive feedback.</li>
+              <li id="about">● Communication: conveying information clearly and effectively, active listening, and writing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
